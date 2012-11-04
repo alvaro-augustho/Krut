@@ -1,0 +1,24 @@
+Notes on the Debian package of gnuchess
+---------------------------------------
+
+gnuchess no longer comes packaged with an opening book, due to build time
+and size considerations. It is strongly recommended that you install the
+gnuchess-book package to have a good working opening book for gnuchess.
+
+If you insist on creating your own opening book, find a PGN file with grand-
+master games, move it into a directory where you have write permissions,
+start gnuchess from that directory, type 'book add <filename>', wait some
+time (depends on the size of the PGN), and if it is finished, type 'quit'.
+You should now have a file 'book.dat' in your current directory, which is
+used as an opening book if you start gnuchess in that directory. If you want
+a system-wide opening book, copy it to
+
+  /usr/share/games/gnuchess/book.dat
+
+and enjoy. (There are some caveats in this whole procedure, because the
+gnuchess PGN parser is not overly smart, so it might choke on complicated
+PGN. Furthermore it checks the names of the players against a hard-coded
+list of names, mostly grandmasters. If it does not match, the opening is not
+added to the opening book.)
+
+Lukas Geyer

@@ -1,0 +1,2 @@
+?package(gnuchess):needs="text" section="Games/Board" \
+	hints="Chess" title="GnuChess" command="/usr/games/gnuchess"
